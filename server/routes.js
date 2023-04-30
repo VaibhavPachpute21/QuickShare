@@ -1,10 +1,7 @@
-const express=require('express')
-const router=express.Router()
+import express from 'express'
+const routes=express.Router()
+import {uploadFile} from './controller.js'
 
+routes.post('/upload',uploadFile);
 
-router.get('/',(req,res)=>{
-    res.send('Hello There');
-
-})
-
-module.exports=router
+export default routes;

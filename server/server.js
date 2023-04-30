@@ -1,9 +1,11 @@
-const express=require('express')
+import routes from './routes.js'
+import express from 'express'
+import cors from 'cors'
 const app=express()
 
 
-
-app.use('/', require('./routes'));
+app.use(cors())
+app.use('/', routes);
 
 
 app.listen(8080,()=>{
