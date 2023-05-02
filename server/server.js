@@ -9,6 +9,6 @@ app.use(cors())
 app.use('/', routes);
 
 ConnectDB()
-app.listen(8080,()=>{
-    console.log('SERVER RUNNING AT 8080')
+var listner= app.listen(8080,()=>{
+    console.log(`SERVER RUNNING AT ${listner.address().address} 8080` )
 })
