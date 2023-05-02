@@ -1,7 +1,7 @@
 import React from 'react'
-
 import { useEffect, useRef, useState } from 'react';
 import { sendFile } from '../Services/APIs'
+import { FileLinksSection } from './FileLinksSection';
 
 export const FileUpload = () => {
     const fileUploadRef = useRef();
@@ -63,16 +63,17 @@ export const FileUpload = () => {
                     <h2>QuickShare for easy and reliable file transfer</h2>
                     <div
                         // id="drop_zone" onDrop={(ev) => { dropHandler(ev) }} onDragOver={(event) => { dragOverHandler(event) }}
-                        className='dropbox'>
+                        className='dropbox form-control form-control-lg'>
                         <button className='btn' onClick={() => { fileUploadRef.current.click(); }}><i class="fa fa-upload"></i> Upload File</button>
                         <p>Click here to upload file</p>
-                        <input type='file' ref={fileUploadRef} hidden={true}
-                            onChange={(e) => { setDLink(''); setFile(e.target.files[0]) }}
+                        <input type='file' className='' ref={fileUploadRef} hidden={true}
+                            onChange={(e) => { setFile(e.target.files[0]) }}
                         />
                     </div>
                     <div>
                         {loading ? <p>Loading...</p> : <></>}
-                        {error == null ? <a>{dLink}</a> : <p>{error}</p>}
+                        {error == null && dLink!='' ? <FileLinksSection dLink={dLink} /> : <></>}
+                        {error != null ? <p>{error}</p>:<></> }
                     </div>
                 </div>
             </div>
