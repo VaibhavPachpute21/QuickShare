@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const SERVER_URL = 'http://127.0.0.1:8080';
+// const SERVER_URL = 'https://quickshare-8oxn.onrender.com';
+ const SERVER_URL = 'http://127.0.0.1:8080';
 
 export const sendFile = async (data) => {
 

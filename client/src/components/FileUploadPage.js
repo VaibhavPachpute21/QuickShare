@@ -41,7 +41,7 @@ export const FileUpload = () => {
             setLoading(true)
             const res = await sendFile(data)
             if (res.status == 200) {
-                setDLink(res.data.path)
+                setDLink(`http://localhost:3000/download/${res.data.path}`)
                 setLoading(false)
             } else {
                 setError(res.data.error || "Error occured")
