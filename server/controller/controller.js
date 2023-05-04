@@ -8,7 +8,8 @@ export const uploadFile = async (request, response) => {
     try {
         const file = await File.create(fileObj)
         console.log(request)
-        response.status(200).json({ path: `http://127.0.0.1:8080/file/${file._id}` })
+        //http://127.0.0.1:8080/file/${file._id}
+        response.status(200).json({ path: `${file._id}` })
     } catch (error) {
         console.error(error)
         response.status(500).json({ error: error.message })
