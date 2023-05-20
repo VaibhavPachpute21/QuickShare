@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom';
 
 export const DownloadFilePage = (props) => {
   const { id } = useParams()
 
-  
+  useEffect(()=>{
+    
+  },[])
+
+
 
 
   return (

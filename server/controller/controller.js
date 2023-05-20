@@ -1,9 +1,12 @@
+import { response } from "express"
 import File from "../models/file.js"
 
 export const uploadFile = async (request, response) => {
     const fileObj = {
         path: request.file.path,
-        name: request.file.originalname
+        name: request.file.originalname,
+        type:request.file.mimetype,
+        size:request.file.size
     }
     try {
         const file = await File.create(fileObj)
@@ -27,4 +30,15 @@ export const downloadImg = async (request, response) => {
         console.log(error)
         return response.status(500).json({ error: error.message })
     }
+}
+
+export const getImgInfo = async (request, response) => {
+    try {
+        const file = await File.findById(request.params.fileId)
+        response.status(200).json({ path: file.path, name: file.name, type: file.type,size:file.size })
+    } catch (error) {
+        console.log(error)
+        return response.status(500).json({ error: error.message })
+    }
+
 }

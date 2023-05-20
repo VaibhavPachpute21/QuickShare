@@ -1,21 +1,28 @@
 import mongoose from "mongoose";
 
-const fileSchema=new mongoose.Schema({
-    path:{
-        type:String,
-        required:true
+const fileSchema = new mongoose.Schema({
+    path: {
+        type: String,
+        required: true
     },
-    name:{
-        type:String,
-        required:true
+    name: {
+        type: String,
+        required: true
     },
-    downloadContent:{
-        type:Number,
-        required:true,
-        default:0
+    type: {
+        type: String
+    },
+    size: {
+        type: Number,
+        required: true
+    },
+    downloadContent: {
+        type: Number,
+        required: true,
+        default: 0
     },
 })
 
-const File=mongoose.model('files',fileSchema)
+const File = mongoose.model('files', fileSchema)
 
 export default File;
