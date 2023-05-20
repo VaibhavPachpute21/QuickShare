@@ -42,7 +42,7 @@ export const FileUpload = () => {
             const res = await sendFile(data)
             console.log(res)
             if (res.status == 200) {
-                setDLink(`http://localhost:3000/download/${res.data.path}`)
+                setDLink(`https://quickshareweb.onrender.com/download/${res.data.path}`)
                 setLoading(false)
             } else {
                 setError(res.data.error || "Error occured")
