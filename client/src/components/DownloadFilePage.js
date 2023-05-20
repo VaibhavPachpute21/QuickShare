@@ -6,8 +6,8 @@ export const DownloadFilePage = (props) => {
   const { id } = useParams()
   const [fileData, setData] = useState({})
   const [success,setSuccess]=useState(false)
-  // const SERVER_URL = 'https://quickshare-8oxn.onrender.com';
-  const SERVER_URL = 'http://127.0.0.1:8080';
+  const SERVER_URL = 'https://quickshare-8oxn.onrender.com';
+  // const SERVER_URL = 'http://127.0.0.1:8080';
 
   const getFileDetails = async () => {
     var res = await getFileInfo(id)

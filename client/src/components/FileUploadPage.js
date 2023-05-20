@@ -40,6 +40,7 @@ export const FileUpload = () => {
             data.append('file', file)
             setLoading(true)
             const res = await sendFile(data)
+            console.log(res)
             if (res.status == 200) {
                 setDLink(`http://localhost:3000/download/${res.data.path}`)
                 setLoading(false)
