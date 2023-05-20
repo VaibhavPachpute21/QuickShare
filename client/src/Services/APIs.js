@@ -12,3 +12,13 @@ export const sendFile = async (data) => {
         console.error(error.message)
     }
 }
+
+export const getFileInfo = async (id)=>{
+    try {
+        const res = await axios.get(`${SERVER_URL}/fileInfo/${id}`)
+        return res;
+    } catch (error) {
+        console.error(error.message)
+        
+    }
+}
