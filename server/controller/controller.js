@@ -5,8 +5,8 @@ export const uploadFile = async (request, response) => {
     const fileObj = {
         path: request.file.path,
         name: request.file.originalname,
-        type:request.file.mimetype,
-        size:request.file.size
+        type: request.file.mimetype,
+        size: request.file.size
     }
     try {
         const file = await File.create(fileObj)
@@ -35,7 +35,13 @@ export const downloadImg = async (request, response) => {
 export const getImgInfo = async (request, response) => {
     try {
         const file = await File.findById(request.params.fileId)
-        response.status(200).json({ path: file.path, name: file.name, type: file.type,size:file.size })
+        if (file) {
+            response.status(200).json({ path: file.path, name: file.name, type: file.type, size: file.size })
+        }else{
+            response.status(404).json({error:"File Not Found" })
+
+        }
+
     } catch (error) {
         console.log(error)
         return response.status(500).json({ error: error.message })

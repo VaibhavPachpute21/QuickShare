@@ -14,11 +14,15 @@ export const DownloadFilePage = (props) => {
   const getFileDetails = async () => {
     setLoading(true)
     var res = await getFileInfo(id)
-    if (res.status == 200) {
-      console.log(res.data)
-      setData(res.data)
-      setSuccess(true)
+    // console.log(res)
+    if(res){
+      if (res.status == 200) {
+        // console.log(res.data)
+        setData(res.data)
+        setSuccess(true)
+      }
     }
+    
     setLoading(false)
   }
 

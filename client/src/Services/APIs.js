@@ -17,9 +17,14 @@ export const sendFile = async (data) => {
 export const getFileInfo = async (id)=>{
     try {
         const res = await axios.get(`${SERVER_URL}/fileInfo/${id}`)
-        return res;
+        if(res.status==200){
+            return res;
+        }else{
+            console.log(res)
+        }
     } catch (error) {
         console.error(error.message)
+        return error.message
         
     }
 }
