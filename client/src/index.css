@@ -8,6 +8,114 @@ body {
   background-color: #03a8f42e;
 }
 
+@keyframes animate {
+  0%{
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+      border-radius: 0;
+  }
+  100%{
+      transform: translateY(-1000px) rotate(720deg);
+      opacity: 0;
+      border-radius: 50%;
+  }
+}
+
+.background {
+  z-index: -1;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  background: #4e54c8;
+  overflow: hidden;
+}
+.background li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  animation: animate 19s linear infinite;
+}
+
+
+.background li:nth-child(0) {
+  left: 81%;
+  width: 129px;
+  height: 129px;
+  bottom: -129px;
+  animation-delay: 1s;
+}
+.background li:nth-child(1) {
+  left: 75%;
+  width: 157px;
+  height: 157px;
+  bottom: -157px;
+  animation-delay: 1s;
+}
+.background li:nth-child(2) {
+  left: 86%;
+  width: 141px;
+  height: 141px;
+  bottom: -141px;
+  animation-delay: 6s;
+}
+.background li:nth-child(3) {
+  left: 24%;
+  width: 146px;
+  height: 146px;
+  bottom: -146px;
+  animation-delay: 4s;
+}
+.background li:nth-child(4) {
+  left: 70%;
+  width: 144px;
+  height: 144px;
+  bottom: -144px;
+  animation-delay: 10s;
+}
+.background li:nth-child(5) {
+  left: 48%;
+  width: 153px;
+  height: 153px;
+  bottom: -153px;
+  animation-delay: 2s;
+}
+.background li:nth-child(6) {
+  left: 68%;
+  width: 186px;
+  height: 186px;
+  bottom: -186px;
+  animation-delay: 16s;
+}
+.background li:nth-child(7) {
+  left: 53%;
+  width: 168px;
+  height: 168px;
+  bottom: -168px;
+  animation-delay: 26s;
+}
+.background li:nth-child(8) {
+  left: 0%;
+  width: 162px;
+  height: 162px;
+  bottom: -162px;
+  animation-delay: 32s;
+}
+.background li:nth-child(9) {
+  left: 60%;
+  width: 176px;
+  height: 176px;
+  bottom: -176px;
+  animation-delay: 2s;
+}
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

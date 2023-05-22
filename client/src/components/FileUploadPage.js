@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect, useRef, useState } from 'react';
 import { sendFile } from '../Services/APIs'
 import { FileLinksSection } from './FileLinksSection';
+import Loader from './Loader';
 
 export const FileUpload = () => {
     const fileUploadRef = useRef();
@@ -59,9 +60,23 @@ export const FileUpload = () => {
 
     return (
         <>
+            <ul class="background">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
             <div className='container text-center outercontainer '>
+                <h2 className='text-white'>QuickShare for easy and reliable file transfer</h2>
+
                 <div className='justify-content-center innerContainer shadow'>
-                    <h2>QuickShare for easy and reliable file transfer</h2>
+                    <h2>Transfer Files</h2>
                     <div
                         // id="drop_zone" onDrop={(ev) => { dropHandler(ev) }} onDragOver={(event) => { dragOverHandler(event) }}
                         className='dropbox form-control form-control-lg'>
@@ -72,9 +87,9 @@ export const FileUpload = () => {
                         />
                     </div>
                     <div>
-                        {loading ? <p>Loading...</p> : <></>}
-                        {error == null && dLink!='' ? <FileLinksSection dLink={dLink} /> : <></>}
-                        {error != null ? <p>{error}</p>:<></> }
+                        {loading ? <div className='d-flex justify-content-center'><Loader/></div> : <></>}
+                        {error == null && dLink != '' ? <FileLinksSection dLink={dLink} /> : <></>}
+                        {error != null ? <p>{error}</p> : <></>}
                     </div>
                 </div>
             </div>
